@@ -2,7 +2,7 @@ angular.module('crossfit.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ChatsCtrl', function($scope, $http, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -10,13 +10,17 @@ angular.module('crossfit.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+	$scope.test = "Test default";
 	$scope.workouts = [
 		{name: "10,000 wallballs"},
 		{name: "row 30 miles"}
 	];
 
 	$scope.getWorkouts = function() {
-		Chats.getWorkouts();
+		Chats.getWorkouts()
+			.then(function(result) {
+				$scope.test = result;
+			});
 	};
 
   $scope.chats = Chats.all();

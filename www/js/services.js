@@ -1,6 +1,6 @@
 angular.module('crossfit.services', [])
 
-.factory('Chats', function() {
+.factory('Chats', function($http) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -34,11 +34,29 @@ angular.module('crossfit.services', [])
   return {
 		getWorkouts: function() {
 			// alert('it worked!');
-			var parseWorkouts = function (response) {
-    }
+			var parseWorkouts = function(response) {
+				var tmp = document.implementation.createHTMLDocument();
+        tmp.body.innerHTML = response.data;
+				workouts = tmp.body.innerHTML;
+				return workouts;
+        // var items = $(tmp.body.children).find('.upcomingdinners li');
+				//
+        // var dinners = [];
+        // for (var i = 0; i < items.length; i++) {
+        //     var dinner = {
+        //         Name: $(items[i]).children('a')[0].innerText,
+        //         Date: $(items[i]).children('strong')[0].innerText
+        //     };
+        //     dinners.push(dinner);
+        // }
+				//
+        // return dinners;
+    	}
 
     return $http.get('http://www.crossfitmagnus.com/category/workout/')
-    	.then(parseWorkouts);
+			.then(function(response) {
+				return parseWorkouts(response);
+			});
 		},
     all: function() {
       return chats;

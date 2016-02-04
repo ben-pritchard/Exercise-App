@@ -1,0 +1,11 @@
+Where I left off:
+=================
+
+Feb 2, 2015:
+The getWorkouts function is returning the http request rather than the promise to call the parseWorkouts function. Look into promises and chaining.
+
+
+To Do:
+======
+
+Add catch and finally statements to all promises.
