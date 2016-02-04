@@ -33,11 +33,10 @@ angular.module('crossfit.services', [])
 
   return {
 		getWorkouts: function() {
-			// alert('it worked!');
 			var parseWorkouts = function(response) {
 				var tmp = document.implementation.createHTMLDocument();
         tmp.body.innerHTML = response.data;
-				workouts = tmp.body.innerHTML;
+				var workouts = tmp.body.getElementsByTagName( 'article' ).getElementsByTagName('section');
 				return workouts;
         // var items = $(tmp.body.children).find('.upcomingdinners li');
 				//
