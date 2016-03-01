@@ -10,6 +10,7 @@ angular.module('crossfit.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
 	$scope.test = "Test default";
 	$scope.workouts = [
 		{name: "10,000 wallballs"},
