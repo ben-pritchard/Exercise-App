@@ -50,12 +50,12 @@ angular.module('crossfit', ['ionic', 'crossfit.controllers', 'crossfit.services'
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.workouts', {
+      url: '/workouts',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-workouts': {
+          templateUrl: 'templates/tab-workouts.html',
+          controller: 'WorkoutsCtrl'
         }
       }
     })

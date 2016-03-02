@@ -2,7 +2,7 @@ angular.module('crossfit.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, $http, Chats) {
+.controller('WorkoutsCtrl', function($scope, $http, Workouts) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -12,15 +12,16 @@ angular.module('crossfit.controllers', [])
   //});
 
 	$scope.getWorkouts = function() {
-		Chats.getWorkouts()
+		Workouts.getWorkouts()
 			.then(function(result) {
 				$scope.test = result;
 			});
 	};
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+  $scope.workouts = Workouts.all();
+
+  $scope.remove = function(workout) {
+    Workouts.remove(workout);
   };
 })
 

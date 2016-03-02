@@ -1,0 +1,19 @@
+<ion-view view-title="Workouts">
+  <ion-content>
+		<div class="padding">
+			<a href="#" class="button-assertive" ng-click="getWorkouts()">Get Workouts</a>
+	</div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="workout in workouts" type="item-text-wrap" href="#/tab/workouts/{{workout.date}}">
+        <img ng-src="{{workout.image}}">
+        <h2>{{workout.date}}</h2>
+        <p>{{workout.workout}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(workout)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
