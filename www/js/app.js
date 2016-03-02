@@ -60,11 +60,11 @@ angular.module('crossfit', ['ionic', 'crossfit.controllers', 'crossfit.services'
       }
     })
     .state('tab.chat-detail', {
-      url: '/chats/:chatDate',
+      url: '/workouts/:workoutDate',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-workouts': {
+          templateUrl: 'templates/workout-detail.html',
+          controller: 'WorkoutDetailCtrl'
         }
       }
     })

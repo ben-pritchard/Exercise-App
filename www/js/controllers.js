@@ -25,8 +25,8 @@ angular.module('crossfit.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatDate);
+.controller('WorkoutDetailCtrl', function($scope, $stateParams, Workouts) {
+  $scope.workout = Workouts.get($stateParams.workoutDate);
 })
 
 .controller('AccountCtrl', function($scope) {
