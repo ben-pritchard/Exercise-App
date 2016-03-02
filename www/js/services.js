@@ -131,9 +131,9 @@ angular.module('crossfit.services', [])
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);
     },
-    get: function(chatId) {
+    get: function(chatDate) {
       for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
+        if (chats[i].date === chatDate) {
           return chats[i];
         }
       }

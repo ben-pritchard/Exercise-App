@@ -11,12 +11,6 @@ angular.module('crossfit.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-	$scope.test = "Test default";
-	$scope.workouts = [
-		{name: "10,000 wallballs"},
-		{name: "row 30 miles"}
-	];
-
 	$scope.getWorkouts = function() {
 		Chats.getWorkouts()
 			.then(function(result) {
@@ -31,7 +25,7 @@ angular.module('crossfit.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  $scope.chat = Chats.get($stateParams.chatDate);
 })
 
 .controller('AccountCtrl', function($scope) {
